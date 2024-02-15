@@ -1,0 +1,39 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: "Nova Square", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    justify-content: center;
+    align-items: center;  
+    background-image: url("recursos/imagenes/fondo.jpg");
+    color: aliceblue;
+}
+.nav-ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li{
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: wheat;
+}
+nav ul li a:hover{
+    color: red;
+    cursor: pointer;
+    background-color: bisque;
+}
+
+.speed {
+    color: rgb(58, 13, 237);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    margin: 10px;
+}
