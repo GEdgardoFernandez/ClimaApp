@@ -1,34 +1,39 @@
-const keyAPI = "";
-
-let valorTemp = document.getElementById(tempValor);
-let tempDesc = document.getElementById(tempDesc);
-let ubi = document.getElementById(ubication);
-let icono = document.getElementById(animation);
-let velocidadViento = document.getElementById(windSpeed);
+const keyAPI = "1a6a365ecaa3426d974154842251711";
+const img = "recursos/iconos/sol94.png";
 
 window.addEventListener('load', ()=>{
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(posicion => {
             console.log(posicion)
-            var lat = "-31.5375000°";
-            var long = "-68.5363900°";
-
-            const urlapi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}$&lon=${long}&appid=69b51fd13e96589445a76e1ac7671b2a`;
-            //const city = `https://api.openweathermap.org/data/2.5/weather?q={city name},{country code}&appid={API key}`
+            let lat = posicion.coords.latitude;
+            let lon = posicion.coords.longitude;
+            let lang = document.getElementById('lang').value;
+            const urlapi = `https://api.weatherapi.com/v1/current.json?key=${keyAPI}&q=${lat},${lon}&lang=${lang}`;
 
             fetch(urlapi)
                 .then(Response =>{return Response.json()})
                 .then(datosClima =>{
                     console.log(datosClima)
-                    var temperature = Math.round(datosClima.main.temp)
-                    valorTemp.innerText = `${temperature} °C`
-                    var desc = datosClima.weather[0].description;
-                    tempDesc.innerText = desc.toUpperCase();
-                    ubi.innerText= datosClima.name;
-                    velocidadViento.innerText = `${datosClima.wind.speed} M/S`
+                     const name = datosClima.location.name;
+                    const region = datosClima.location.region;
+                    const country = datosClima.location.country;
+                    const temp = datosClima.current.temp_c;
+                    const condition = datosClima.current.condition.text;
+                    const winddir = datosClima.current.wind_dir;
+                    const windkph = datosClima.current.wind_kph;
+                    const icon = datosClima.current.condition.icon;
+
+                    document.getElementById('animation').src = `https:${icon}`;
+
+                    document.getElementById('tempValor').textContent = temp;
+                    document.getElementById('tempDesc').textContent = condition;
+                    document.getElementById('ubication').textContent = `${name}, ${region}, ${country}`;
+                    document.getElementById('windSpeed').textContent = windkph;
+                    document.getElementById('windir').textContent = winddir;
 
             })
 
         })
     }
 })
+

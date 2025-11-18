@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
@@ -10,28 +11,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
     <title>ClimaPP</title>
 </head>
-<body>
+
+<body id="body">
     <nav class="nav">
-        <h1>ClimaApp</h1>
-        <h2>By: Guillermo Fernandez</h2>
+        <h1 id="titulo">ClimaApp</h1>
+        <h2 id="author">By: Guillermo Fernandez</h2>
         <ul class="nav-ul">
             <li><a href="https://github.com/GEdgardoFernandez?tab=repositories" target="_blank">Github</a></li>
-            <li><a href="https://www.linkedin.com/in/guillermo-fern%C3%A1ndez-703b50267/" target="_blank">Linkedin</a></li>
+            <li><a href="https://www.linkedin.com/in/guillermo-fern%C3%A1ndez-703b50267/" target="_blank">Linkedin</a>
+            </li>
             <li><a href="https://cafecito.app/serviciotecnico2c2" target="_blank">Cafecito</a></li>
         </ul>
+        <select name="idioma" id="lang">
+            <option value="es" selected onclick="location.reload()">Español</option>
+            <option value="en" onclick="window.reload()">English</option>
+            <option value="fr" onclick="location.reload()">Français</option>
+            <option value="de" onclick="location.reload()">Deutsch</option>
+        </select>
     </nav>
     <div id="contenedor">
-        <div id="cont-1"></div>
-            <h1 id="tempValor"></h1>
-            <h1 id="tempDesc"></h1>
-        <div id="cont-2">
+        <div id="cont1">
             <h2 id="ubication"></h2>
-            <img id="animation" src="" alt="" height="128" width="128">
+            <div id="cont2">
+                <h1 id="tempValor"></h1>
+                <h1 id="tempDesc"></h1>
+                <img id="animation" src="" alt="" height="94" width="94">
+            </div>
+            <div id="cont3">
+                <h3 class="speed">Velocidad del viento</h3>
+                <div id="infowind">
+                    <h3 class="h3speed" id="windir"></h3>
+                    <h3 class="h3speed" id="windSpeed"></h3>
+                    <h3 class="h3speed"> km/h</h3>
+                </div>
+            </div>
         </div>
-        <div id="cont-3">
-            <h3 class="speed">Velocidad del viento</h3>
-            <h3 class="h3speed" id="windSpeed"></h3>
-        </div>
-    </div>
 </body>
+
 </html>
