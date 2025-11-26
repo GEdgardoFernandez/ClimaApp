@@ -9,11 +9,6 @@ agregue las funciones necesarias para mostrar la geolocalizacion en los navegado
 Dato: al parecer mi ubicacion actual no puede acceder al clima de la API, voy a proseguir con el armado de la appweb para probar con alguna otra ubicacion.
 
 
+Para probar el funcionamiento se puede descagar el repositorio y luego descomprimirlo.
+Finalmente abrimos index.html en el navegador de nustra preferencia y le damos permiso para la geolocalizacion, pronto le agregare los filtros para buscar por pais, ciudad, etc.
 
-
-
-
-
-
-
-NOTA: esta aplicacion es creada para poner en mi portafolio, para mostrar en los proyectos del mismo, en este docuemnto agregare despues de los commits, cada modificacion, o elemento agregado a la misma.
