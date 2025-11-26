@@ -1,7 +1,12 @@
 const keyAPI = "1a6a365ecaa3426d974154842251711";
 const img = "recursos/iconos/sol94.png";
-
-window.addEventListener('load', ()=>{
+const pais = document.getElementById('country').value;
+const provincia = document.getElementById('provincia').value;
+const ciudad = document.getElementById('city').value;
+const lang = document.getElementById('lang').value;
+const change = document.getElementById('formChange').action;
+console.log(pais, provincia, ciudad, change, lang);
+window.addEventListener('load', () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(posicion => {
             console.log(posicion)
@@ -11,10 +16,10 @@ window.addEventListener('load', ()=>{
             const urlapi = `https://api.weatherapi.com/v1/current.json?key=${keyAPI}&q=${lat},${lon}&lang=${lang}`;
 
             fetch(urlapi)
-                .then(Response =>{return Response.json()})
-                .then(datosClima =>{
+                .then(Response => { return Response.json() })
+                .then(datosClima => {
                     console.log(datosClima)
-                     const name = datosClima.location.name;
+                    const name = datosClima.location.name;
                     const region = datosClima.location.region;
                     const country = datosClima.location.country;
                     const temp = datosClima.current.temp_c;
@@ -31,7 +36,7 @@ window.addEventListener('load', ()=>{
                     document.getElementById('windSpeed').textContent = windkph;
                     document.getElementById('windir').textContent = winddir;
 
-            })
+                })
 
         })
     }
