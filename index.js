@@ -1,11 +1,6 @@
 const keyAPI = "1a6a365ecaa3426d974154842251711";
 const img = "recursos/iconos/sol94.png";
-const pais = document.getElementById('country').value;
-const provincia = document.getElementById('provincia').value;
-const ciudad = document.getElementById('city').value;
 const lang = document.getElementById('lang').value;
-const change = document.getElementById('formChange').action;
-console.log(pais, provincia, ciudad, change, lang);
 window.addEventListener('load', () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(posicion => {
@@ -42,3 +37,7 @@ window.addEventListener('load', () => {
     }
 })
 
+function darkMode() {
+    const body = document.getElementById('body');
+    body.classList.toggle('dark');
+}
